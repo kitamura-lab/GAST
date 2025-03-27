@@ -94,10 +94,10 @@ data/video内に保存された動画ファイルを引数にとり(以下の例
 
 ### skelton_visual_camera.pyの使い方
 
-骨格座標npzファイルのパスを指定し、骨格を描画する
+骨格座標npzファイルを指定し、骨格を描画する
 
 ```
-python skelton_visual_camera.py
+python skelton_visual_camera.py output/baseball.npz
 ```
 実行すると、カメラ座標系の3次元骨格座標(cm単位)を結ぶ線を描画し、アニメーションを表示し、骨格座標はnpzファイルで出力する
 
