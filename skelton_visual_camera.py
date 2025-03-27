@@ -125,7 +125,7 @@ def plot_3d_skeleton_animation(skeleton_data):
     ax.set_ylabel("Y")
     ax.set_zlabel("Z")
 
-    ani = FuncAnimation(
+    _ = FuncAnimation(
         fig,
         update,
         frames=skeleton_data,
