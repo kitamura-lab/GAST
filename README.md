@@ -1,6 +1,11 @@
 # GAST
 単眼カメラで撮影された動画を入力とし、3次元姿勢推定モデルGASTを用いて、3次元骨格座標を推定する。
 
+## 前提
+* Nvidia製GPUつきPC
+* CUDA 12.6
+* Miniconda
+
 ## プログラムの仕様
 
 ### gen_skes.py
@@ -19,7 +24,7 @@ conda activate GAST
 
 ## 必要なパッケージのインストール法
 ```
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 pip install -r requirements.txt
 ```
 
@@ -34,18 +39,20 @@ cd checkpoint
 mkdir gastnet
 mkdir yolov3
 mkdir hrnet
+cd hrnet
+mkdir pose_coco
 ```
 * モデルファイルのダウンロード
-    * gastnetモデルファイル
+    * gastnetモデルファイル：
     学習済みGAST-Netモデル[27_frame_model.bin](https://drive.google.com/file/d/1vh29QoxIfNT4Roqw1SuHDxxKex53xlOB/)をダウンロードして、checkpoint/gastnetフォルダに保存する
-    * yolov3モデルファイル
+    * yolov3モデルファイル：
     学習済みYOLOv3モデルをダウンロードして、checkpoint/yolov3フォルダに保存する
     ```
     cd checkpoint/yolov3
     wget https://pjreddie.com/media/files/yolov3.weights
     ```
-    * hrnetモデルファイル
-    checkpoint/hrnetフォルダ内にpose_cocoフォルダを作成し、学習済みHRNetモデル[pose_hrnet_w48_384x288.pth](https://drive.google.com/file/d/1UoJhTtjHNByZSm96W3yFTfU5upJnsKiS/view)をダウンロードして、pose_cocoフォルダに保存する
+    * hrnetモデルファイル：
+    学習済みHRNetモデル[pose_hrnet_w48_384x288.pth](https://drive.google.com/file/d/1UoJhTtjHNByZSm96W3yFTfU5upJnsKiS/view)をダウンロードして、checkpoint/hrnet/pose_cocoフォルダに保存する
     
 
 最終的なフォルダ構成は以下のようになります。
