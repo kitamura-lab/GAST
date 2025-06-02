@@ -1,9 +1,11 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import os
-from matplotlib.animation import FuncAnimation
-from common.camera import world_to_camera
 import sys
+
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.animation import FuncAnimation
+
+from common.camera import world_to_camera
 
 rot = np.array([0.14070565, -0.15007018, -0.7552408, 0.62232804], dtype=np.float32)
 ratio = 101.72144
@@ -124,6 +126,9 @@ def plot_3d_skeleton_animation(skeleton_data):
     ax.set_xlabel("X")
     ax.set_ylabel("Y")
     ax.set_zlabel("Z")
+    
+    # ax.view_init(elev=-60, azim=-20, roll=-70)
+    ax.view_init(elev=-45, azim=0, roll=-90)
 
     _ = FuncAnimation(
         fig,
