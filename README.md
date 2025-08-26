@@ -32,30 +32,7 @@ pip install -r requirements.txt
 
 ### gen_skes.pyの使い方
 
-* 必要なモデルファイルのダウンロードをするフォルダの作成
-```
-mkdir checkpoint
-cd checkpoint
-mkdir gastnet
-mkdir yolov3
-mkdir hrnet
-cd hrnet
-mkdir pose_coco
-```
-* モデルファイルのダウンロード
-    * gastnetモデルファイル：
-    学習済みGAST-Netモデル[27_frame_model.bin](https://drive.google.com/file/d/1vh29QoxIfNT4Roqw1SuHDxxKex53xlOB/)をダウンロードして、checkpoint/gastnetフォルダに保存する
-    * yolov3モデルファイル：
-    学習済みYOLOv3モデルをダウンロードして、checkpoint/yolov3フォルダに保存する
-    ```
-    cd checkpoint/yolov3
-    wget https://pjreddie.com/media/files/yolov3.weights
-    ```
-    * hrnetモデルファイル：
-    学習済みHRNetモデル[pose_hrnet_w48_384x288.pth](https://drive.google.com/file/d/1UoJhTtjHNByZSm96W3yFTfU5upJnsKiS/view)をダウンロードして、checkpoint/hrnet/pose_cocoフォルダに保存する
-    
-
-最終的なフォルダ構成は以下のようになります。
+* [ここ](https://kwansei.box.com/s/iqxn9ofblb314sbm6dirm2uex9alseoi)からcheckpoint.zipをダウンロードし，解凍する．フォルダ構成は以下のようになる．
 ```
     ${root_path}
     -- checkpoint
@@ -67,8 +44,6 @@ mkdir pose_coco
         |-- gastnet
             |-- 27_frame_model.bin
 ```
-
-
 
 * アニメーションを出力する場合
 data/video内に保存された動画ファイルを引数にとり(以下の例では、data/video内のbaseball.mp4)とし、骨格座標を推定し、アニメーションを出力する(outputフォルダに出力される)
