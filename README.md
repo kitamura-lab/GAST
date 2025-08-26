@@ -76,10 +76,10 @@ python skelton_visual_camera.py output/baseball.npz
 ```
 実行すると、カメラ座標系の3次元骨格座標(cm単位)を結ぶ線を描画し、アニメーションを表示し、骨格座標はnpzファイルで出力する
 
-### skelton_visual_camera1.py
+### svc.py
 
 output/baseball.npzの骨格を描画する．
-不要なコードを削減している．
+skelton_visual_camera.pyの不要なコードを削除している．
 
 
 ## 開発者
